@@ -224,6 +224,7 @@ function temps(){
   }else if (âge > 35 & âge < 100){
     health -= 2;
     healthText.innerText = health;
+    healthy();
   }else {
     update(actions[9]);
   } 
@@ -238,6 +239,7 @@ function tempsEtudes(){
   }else if (âge > 35 & âge < 100){
     health -= 2;
     healthText.innerText = health;
+    healthy();
   }else {
     update(actions[9]);
   } 
