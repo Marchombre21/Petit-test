@@ -184,8 +184,7 @@ function sport() {
       update(actions[4]);
       button2.style.display = "inline";
 }else{
-  text.innerText = "Félicitation, vous avez acheté tous les articles disponibles!"
-}
+  text.innerText = "Félicitation, vous avez acheté tous les articles disponibles!"}
 }
 
 function petitsBoulots() {
