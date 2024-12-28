@@ -185,10 +185,6 @@ function sport() {
       button2.style.display = "inline";
 }else{
   text.innerText = "Félicitation, vous avez acheté tous les articles disponibles!"
-<<<<<<< HEAD
-=======
-}
->>>>>>> f3fb7da38a271ad672b10567706f44e1ce7af5d4
 }
 }
 
