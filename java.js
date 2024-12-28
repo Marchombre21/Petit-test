@@ -199,9 +199,13 @@ function sport() {
   button3.style.display = "inline";
   button4.style.display = "inline";
 }
-  function magasin() {
+ function magasin() {
+    if(currentStuff < stuffs.length){
       update(actions[4]);
       button2.style.display = "inline";
+}else{
+  text.innerText = "Félicitation, vous avez acheté tous les articles disponibles!"
+}
 }
 function étudieDroit() {
   if (gold >= 60) {
