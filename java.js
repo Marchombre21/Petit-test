@@ -92,7 +92,7 @@ const actions = [
     name: "Retour maison", 
     "button text": ["Étudier", "Sortir", "Trouver un travail", "Faire du sport", "Faire des achats"],
     "button functions": [étudier, sortir, travailler, sport, magasin], 
-    text: "Bienvenue dans la vie de Léon BRIVES OPERON. En tant que tuteur légal, laissez-vous tenter par une simulation de sa vie." 
+    text: "Bienvenue dans la vie de Mayeul BAZIN DELESTREZ. En tant que tuteur légal, laissez-vous tenter par une simulation de sa vie." 
   },
   { 
     name: "Mort", 
