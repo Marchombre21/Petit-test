@@ -38,22 +38,7 @@ const stuffs = [
   { name: 'voiture', prix: 1500, charisme: 30, santé: 0, phrase: "Vous venez d'acheter une voiture! Attention, pas d'alcool au volant! Vous gagnez 30 en charisme!"},
   { name: 'maison', prix: 10000, charisme: 50, santé: 0, phrase: "Vous venez d'acheter une maison! Enfin débarrassé de vos parents! Vous gagnez 50 en charisme!"},
 ];
-const listePetitsBoulots = [
-  {
-    name: "Caissier à McDo", salaire: 20},
-  {
-    name: "Ramasser les fruits"},
-  {
-    name: "Donner des cours particuliers"}
-]
-const listeTravail = [
-{name: "Éboueur", level: 1},
-{name: "RH", level: 8},
-{name: "Banquier", level: 8},
-{name: "Avocat", level: 15},
-{name: "Psychologue", level: 8}
 
-]
 const actions = [
   {
     name: "étudier",
@@ -107,7 +92,7 @@ const actions = [
     name: "Retour maison", 
     "button text": ["Étudier", "Sortir", "Trouver un travail", "Faire du sport", "Faire des achats"],
     "button functions": [étudier, sortir, travailler, sport, magasin], 
-    text: "Bienvenue dans la vie de Mayeul BAZIN DELESTREZ. En tant que tuteur légal, laissez-vous tenter par une simulation de sa vie." 
+    text: "Bienvenue dans la vie de Léon BRIVES OPERON. En tant que tuteur légal, laissez-vous tenter par une simulation de sa vie." 
   },
   { 
     name: "Mort", 
@@ -131,12 +116,6 @@ const actions = [
   },
 ];
 
-function healthy() {
-  if (health <= 0) {
-    update(actions[10]);
-  }
-}
-// initialize buttons
 button1.onclick = étudier;
 button2.onclick = sortir;
 button3.onclick = travailler;
@@ -199,26 +178,37 @@ function sport() {
   button3.style.display = "inline";
   button4.style.display = "inline";
 }
- function magasin() {
+
+  function magasin() {
     if(currentStuff < stuffs.length){
       update(actions[4]);
       button2.style.display = "inline";
 }else{
   text.innerText = "Félicitation, vous avez acheté tous les articles disponibles!"
+<<<<<<< HEAD
+=======
+}
+>>>>>>> f3fb7da38a271ad672b10567706f44e1ce7af5d4
 }
 }
-function étudieDroit() {
-  if (gold >= 60) {
-    gold -= 60;
-    xpDroit += 30;
-    goldText.innerText = gold;
-    xpDroitText.innerText = xpDroit;
-    text.innerText = "Vous passez six mois à étudier le Droit. Vous gagnez 30 d'expérience dans ce domaine."
-    tempsEtudes();
-  } else {
-    text.innerText = "Vous n'avez pas assez d'argent pour faire ce cursus. Allez travailler!";
-  }
+
+function petitsBoulots() {
+  update(actions[5]);
+  button2.style.display = "inline";
+  button3.style.display = "inline";
+  button4.style.display = "inline";
 }
+
+function travail() {
+  update(actions[6]);
+  button2.style.display = "inline";
+  button3.style.display = "inline";
+  button4.style.display = "inline";
+  button5.style.display = "inline";
+  button6.style.display = "inline";
+}
+
+
 function temps(){
   âge += 1;
   âgeText.innerText = parseFloat(âge.toFixed(1));
@@ -278,18 +268,6 @@ function achat() {
     text.innerText = "Tu as déjà acheté tout le magasin!";
   }
 }
-/*
-function sellWeapon() {
-  if (inventory.length > 1) {
-    gold += 15;
-    goldText.innerText = gold;
-    let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory;
-  } else {
-    text.innerText = "Don't sell your only weapon!";
-  }
-}*/
 
 function retourMaison() {
   fonctionCount.push('retourMaison');
@@ -299,14 +277,28 @@ function retourMaison() {
   button4.style.display = "inline";
   button5.style.display = "inline";
 }
+
+function étudieDroit() {
+  if (gold >= 60) {
+    gold -= 60;
+    xpDroit += 30;
+    goldText.innerText = gold;
+    xpDroitText.innerText = xpDroit;
+    text.innerText = "Vous passez six mois à étudier le Droit. Vous gagnez 30 d'expérience dans ce domaine."
+    tempsEtudes();
+  } else {
+    text.innerText = "Vous n'avez pas assez d'argent pour faire ce cursus. Allez travailler!";
+  }
+}
+
 function étudieEconomie() {
   if (gold >= 60) {
     gold -= 60;
     xpEconomie += 30;
     goldText.innerText = gold;
     xpEconomieText.innerText = xpEconomie;
-    tempsEtudes();
     text.innerText = "Vous passez six mois à étudier l'Économie. Vous gagnez 30 d'expérience dans ce domaine."
+    tempsEtudes();
   } else {
     text.innerText = "Vous n'avez pas assez d'argent pour faire ce cursus. Allez travailler!";
   }
@@ -332,12 +324,10 @@ function enBoite() {
     goldText.innerText = gold;
     health -= 5;
     healthText.innerText = health;
-    
     sociabilité += 20;
     sociabilitéText.innerText = sociabilité;
     charisme += 40;
     charismeText.innerText = charisme;
-    
     text.innerText = "Vous allez en boite avec des amis. Vous perdez 5 de santé mais gagnez 20 en sociabilité et 40 en charisme."
     healthy();
   }else{
@@ -392,21 +382,7 @@ function soiréeMaison() {
   }
 }
 
-function petitsBoulots() {
-  update(actions[5]);
-  button2.style.display = "inline";
-  button3.style.display = "inline";
-  button4.style.display = "inline";
-}
 
-function travail() {
-  update(actions[6]);
-  button2.style.display = "inline";
-  button3.style.display = "inline";
-  button4.style.display = "inline";
-  button5.style.display = "inline";
-  button6.style.display = "inline";
-}
 
 function uneHeure() {
   if(gold >= 20){
@@ -458,6 +434,7 @@ function cinqHeures() {
     text.innerText = "Vous n'avez pas assez d'argent pour faire cette activité. Allez travailler!"
   }
 }
+
 function caissier(){
   if (âge <= 25){
   gold += 100;
@@ -468,8 +445,8 @@ function caissier(){
   charismeText.innerText = parseFloat(charisme.toFixed(1));
   health -= 0.5;
   healthText.innerText = parseFloat(health.toFixed(1));
-  healthy();  
   text.innerText = "Vous faites le service au McDo le plus proche pendant la moitié de l'année. Vous arrivez à économiser 100€ et perdez 2 en charisme et 0.5 en santé."
+  healthy();
 }else{
     text.innerText = "Vous êtes trop vieux pour faire ce métier."
   }
@@ -516,13 +493,13 @@ function éboueur(){
   if(âge >= 18){
     if (currentStuff >= 3){
     health -= 5;
-    healthy();
     gold += 1000;
     goldText.innerText = gold;
     charisme -= 2;
     charismeText.innerText = charisme;
     temps();
     text.innerText = "Vous êtes éboueur pendant un an. Vous économisez 1000€ mais perdez 2 de charisme."
+    healthy();
   }else {
     text.innerText = "Vous devez être véhiculé pour faire ce métier. A votre âge il serait temps d'y penser, vous ne croyez pas?"
   }
@@ -664,22 +641,7 @@ buttonfinal.onclick = restart;
     phrasefinale.innerText = "Bravo! Vous n'avez jamais été capable de choisir une voie plutôt qu'une autre et vous voilà devenu un Employé de bureau bien rangé! Vous n'avez jamais fait de vagues et comptez bien continuer comme ça encore longtemps! Ce n'est peut-être pas la vie la plus trépidante que vous avez choisie mais elle en contente plus d'un."
   }
 }
-function checkEasterEgg() {
-  if (
-    fonctionCount.length >= 6 &&
-    fonctionCount[fonctionCount.length-6] === 'update' &&
-    fonctionCount[fonctionCount.length-5] === 'auBar' &&
-    fonctionCount[fonctionCount.length-4] === 'retourMaison' &&
-    fonctionCount[fonctionCount.length-3] === 'update' &&
-    fonctionCount[fonctionCount.length-2] === 'sport' &&
-    fonctionCount[fonctionCount.length-1] === 'update') 
-    {
-    setTimeout(() => { 
-    easterEgg();
-    fonctionCount = [];
-      }, 100);
-  }
-}
+
 function restart() {
   xpSocial= 0;
   xpEconomie= 0;
@@ -700,6 +662,30 @@ function restart() {
   xpDroitText.innerText = xpDroit;
   âgeText.innerText = âge;
   retourMaison();
+}
+
+function healthy() {
+  if (health <= 0) {
+    console.log(actions[10]);
+    update(actions[10]);
+  }
+}
+
+function checkEasterEgg() {
+  if (
+    fonctionCount.length >= 6 &&
+    fonctionCount[fonctionCount.length-6] === 'update' &&
+    fonctionCount[fonctionCount.length-5] === 'auBar' &&
+    fonctionCount[fonctionCount.length-4] === 'retourMaison' &&
+    fonctionCount[fonctionCount.length-3] === 'update' &&
+    fonctionCount[fonctionCount.length-2] === 'sport' &&
+    fonctionCount[fonctionCount.length-1] === 'update') 
+    {
+    setTimeout(() => { 
+    easterEgg();
+    fonctionCount = [];
+      }, 100);
+  }
 }
 
 function easterEgg() {
