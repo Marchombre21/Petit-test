@@ -314,7 +314,7 @@ function étudieSocial() {
 
 function enBoite() {
   if (âge >= 16){
-  if (currentStuff > 2){
+  if (currentStuff > 1){
   if(gold >= 70){
     gold -= 70;
     goldText.innerText = gold;
